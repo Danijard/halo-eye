@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.logo-svg {
+    position: absolute;
+    top: 36px;
+    left: 36px;
+    transform: translate(-50%, -50%);
+}
+
+.logo-text {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+    margin-left: 42px;
+}
+
+.logo-gradient-wrapper {
+    display: inline-block; /* Важно для правильного отображения ширины */
+    background-image: linear-gradient(to right, #8e44ad, #e74c3c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.first-logo-letter,
+.logo-letter {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 38px;
+    font-weight: 200;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    margin: 2px;
+}
+
+.first-logo-letter {
+    margin-left: 12px;
+}
+
+@media (max-width: 1280px) {
+    .logo-text {
+      transition: opacity 0.15s ease 0s;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .left-bar-tile {
+      transition: width 0.15s ease 0.15s;
+      width: 72px !important;
+    }
+}
+  
+@media (min-width: 1281px) {
+    .left-bar-tile {
+      transition: width 0.15s ease 0s;
+      width: 300px !important;
+    }
+    .logo-text {
+      transition: opacity 0.15s ease 0.15s;
+      opacity: 1;
+      pointer-events: auto;
+    }
+}
