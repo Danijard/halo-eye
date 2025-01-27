@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import './styles/main-tile.css';
 import './styles/left-zone.css';
+import './styles/layout.css';
 
 export default function RootLayout({
   children,
@@ -12,9 +13,18 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {background}
-        {logo}
-        {navigation}
-        {children}
+        <div
+        style={
+          {
+            display: "flex",
+          }
+        }>
+          <div>
+            {logo}
+            {navigation}
+          </div>   
+          {children}
+        </div>
       </body>
     </html>
   );
@@ -22,14 +32,7 @@ export default function RootLayout({
 
 const logo = (
   <div
-    className="main-tile left-bar-tile"
-    style={{
-      position: "fixed",
-      top: "20px",
-      left: "20px",
-      height: "73px",
-      width: "300px",
-    }}
+    className="main-tile left-bar-tile logo-tile"
   >
     <div className="logo-section">
       <Image
@@ -55,15 +58,29 @@ const logo = (
 );
 
 const navigation = (
-    <div className='main-tile left-bar-tile'
-        style={{
-            position: "fixed",
-            top: "105px",
-            left: "20px",
-            height: "calc(100% - 125px)",
-            width: "300px",
-        }}>
-    </div>
+  <div className='main-tile left-bar-tile navigation-tile'>
+      <div className="navigation-section first-navigation-item">
+        <nav className="navigation-item">
+          <Image src="/dashboard-icon.svg" alt="Dashboard" width={45} height={45} />
+          <span className="navigation-text">Dashboard</span>
+        </nav>
+        <div className="navigation-item-split"></div>
+        <nav className="navigation-item">
+          <Image src="/chart-icon.svg" alt="Charts" width={45} height={45} />
+          <span className="navigation-text">Charts</span>
+        </nav>
+        <div className="navigation-item-split"></div>
+        <nav className="navigation-item">
+          <Image src="/megaphone-icon.svg" alt="Reporting" width={40} height={45}
+          style={
+            {
+              marginLeft: "3px"
+            }
+          } />
+          <span className="navigation-text">Reporting</span>
+        </nav>
+      </div>
+  </div>
 );
 
 const background = (
