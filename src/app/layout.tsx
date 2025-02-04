@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import './styles/main-tile.css';
+import './styles/tile.css';
 import './styles/left-zone.css';
 import './styles/layout.css';
 
@@ -13,12 +13,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {background}
-        <div
-        style={
-          {
-            display: "flex",
-          }
-        }>
+        <div className='zones'>
           <div>
             {logo}
             {navigation}
@@ -32,7 +27,7 @@ export default function RootLayout({
 
 const logo = (
   <div
-    className="main-tile left-bar-tile logo-tile"
+    className="tile left-bar-tile logo-tile"
   >
     <div className="logo-section">
       <Image
@@ -58,7 +53,7 @@ const logo = (
 );
 
 const navigation = (
-  <div className='main-tile left-bar-tile navigation-tile'>
+  <div className='tile left-bar-tile navigation-tile'>
       <div className="navigation-section first-navigation-item">
         <nav className="navigation-item">
           <Image src="/dashboard-icon.svg" alt="Dashboard" width={45} height={45} />
